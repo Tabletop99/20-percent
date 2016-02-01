@@ -1,4 +1,4 @@
-Proposal
+Proposal:
 TyPro: A program that will help people learn how to type faster
 
 Drew McMains
