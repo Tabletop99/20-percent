@@ -1,37 +1,34 @@
-# Proposal: [title of project]
-## [subtitle that helps describe the project]
-[Names]
+Proposal:
+TyPro: A program that will help people learn how to type faster
 
-## Needs and Opportunities
-Explain the problem you have noticed that needs to be solved with a project
-like yours. This is also your hook, so make sure you grab our attention.
+Drew McMains
 
-## Audience / Clients / Users
-Explain who will benefit from your project. How will you be able to access
-them for testing?
 
-## Product
-What is the actual product you will show this spring. This project may be made
-of atoms or bits, but you must have something to show. I'm not interested
-seeing a bunch of great ideas at the end of the year. I want to see things.
+Needs and Opportunities:
+Many people's lives would be improved if they could type faster.
+ Most people use type on computers fairly often, so a faster typing speed will help them use their time more efficiently.
+ 
 
-## Timeline
-What is your monthly timeline for this project. I want to see a list of
-deliverables with deadlines. You may find that the timeline needs adjustment
-during the course of the year, which may be fine. Check in with me if that's
-the case. 
+Audience / Clients / Users:
+Anyone that types regularly will benefit from my project. Whether it be coding, typing essays, or typing emails, many people will find my project useful. I have a great pool of people to test my project on in the form of myself and my classmates.
 
-| Date          | Deliverable   |
-| ------------- | ------------- |
-| February 26   | Deliverable 1 |
-| April 1       | Deliverable 2 |
-| April 29      | Deliverable 3 |
 
-## Reality Check
-I am looking for moonshots here, but even moonshots need budgets. What
-equipment are you going to need? What other capital expenditures do you
-anticipate, and how will you meet them?
 
-## Conclusion
-Wrap it up. Why are you fired up about this project? Inspire us to support you,
-and give us a great reason to approve your project.
+Product:
+My project will be a program that is designed to help people type faster. It will do this by providing text for the user to type, and then displaying their words per minute based on how long it took them to type the text and how many words they got right.
+
+
+Timeline: 
+February 26: Be able to compare user input to the target text
+
+April 1: Incorporate a timer and be able to display the user's words per minute
+
+April 29: Allow backspacing, possibly add a GUI
+
+
+Reality Check:
+I don't expect to have any financial issues because most if not all of my project will be done in BlueJ.
+
+
+Conclusion:
+I am excited for this project because it will give me valuable programming experience, and it is an applicable and useful idea.
