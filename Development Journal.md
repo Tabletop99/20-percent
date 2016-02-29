@@ -1,3 +1,6 @@
+##### 02.28.16
+Today and Friday I made my project much easier to use. I added the backspace functionality, which was much easier to do that I thought it would be since I am not implementing the arrow keys. I also made the project check the user's input word-by-word instead of all at once, which makes it only color the word that is wrong red instead of the entire thing. Next week i will begin looking into how to create a timer so I can be ready for the next deliverable.
+
 ##### 02.21.16
 I began writing my code Friday, and I completed my first deliverable today. I now have a program that compares the typed input text to the target text and if they do not match it turns the input text red. Unfortunately, backspacing has not been implemented and so messing up one character turns everything red and the only way to make it black again is to restart. The next thing I will do is make the program compare the two texts word by word so that if a word is wrong it will only turn that word red instead of the entire thing. I'll do this by using the split method that we used in the EOC project to process commands.
 
