@@ -15,7 +15,10 @@ public class Typer extends JPanel implements KeyListener
     private JFrame frame;
     private static final int CURSOR_WIDTH = 1;
     private static final int TYPER_WIDTH = 1000;
-    private static final int TYPER_HEIGHT = 100;
+    private static final int TYPER_HEIGHT = 110;
+    private int correct;
+    private int timePassed;
+    private int wpm;
     public void keyPressed(KeyEvent e) 
     {
 
@@ -28,22 +31,45 @@ public class Typer extends JPanel implements KeyListener
 
     public void keyTyped(KeyEvent e) 
     {
-        int keycode = e.getKeyCode();
-        if (e.getKeyChar() != e.CHAR_UNDEFINED && e.getKeyChar() != '\b') 
+        if (e.getKeyChar() != e.CHAR_UNDEFINED && e.getKeyChar() != '\b' && e.getKeyChar() != '\u001b') 
         {
             input += ("" + e.getKeyChar());
         }
         else if (e.getKeyChar() == '\b')
         {
-            input = input.substring(0, input.length() - 1);
+            if (!input.equals(""))
+            {
+                input = input.substring(0, input.length() - 1);
+            }
         }
-        //e.getKeyChar() != 'uO01b' (with backslash before "u") -- escape keyChar
+        else if (e.getKeyChar() == '\u001b')
+        {
+            System.exit(0);
+        }
         this.repaint();
     }
+
+    Timer timer = new Timer(100, new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent e)
+                {
+                    timePassed += 1;
+                    if (timePassed >= 10)
+                    {
+                        wpm = correct*60/(timePassed/10);
+                    }
+                    else
+                    {
+                        wpm = correct * 60;
+                    }
+                }
+            });
 
     public Typer()
     { 
         this("", "");
+        timer.start();
     }
 
     public Typer(String input, String target) 
@@ -60,16 +86,24 @@ public class Typer extends JPanel implements KeyListener
     protected void paintComponent(Graphics g) 
     {
         String[] inputWords = input.split(" ");
+        correct = 0;
+        for (int i = 0; i < inputWords.length; i++)
+        {
+            if (inputWords[i].equalsIgnoreCase(targetWords[i]))
+            {
+                correct++;
+            }
+        }
         if (inputWords.length <= targetWords.length && input.length() <= target.length())
         {
             super.paintComponent(g);
             g.setColor(Color.white);
-            int w = this.getWidth();
-            int h = this.getHeight();
-            g.fillRect(0,0,w,h);
+            int width = this.getWidth();
+            int height = this.getHeight();
+            g.fillRect(0,0,width,height);
             FontMetrics fm = g.getFontMetrics();
             int fh = fm.getAscent();
-            int middle = h/2+fh/2;
+            int middle = height/2+fh/2;
             g.setColor(Color.black);
             g.drawString(target,0,10);
             if (target.length() >= input.length())
@@ -95,6 +129,12 @@ public class Typer extends JPanel implements KeyListener
             int cursorTracker = fm.stringWidth(input);
             g.setColor(Color.black);
             g.fillRect(cursorTracker,middle-fh,CURSOR_WIDTH,fh);
+            g.drawString("Words per minute: " + wpm,0,68);
+        }
+        else
+        {
+            g.drawString("Words per minute: " + wpm,0,68);
+            timer.stop();
         }
     }
 }
