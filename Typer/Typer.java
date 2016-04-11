@@ -10,7 +10,7 @@ import javax.swing.*;
 public class Typer extends JPanel implements KeyListener
 {
     private String input = "";
-    private String target = "The quick brown fox jumped over the lazy dog.";
+    private String target = "The quick brown fox jumped over the lazy dog";
     private String[] targetWords = target.split(" ");
     private JFrame frame;
     private static final int CURSOR_WIDTH = 1;
@@ -19,6 +19,12 @@ public class Typer extends JPanel implements KeyListener
     private int correct;
     private int timePassed;
     private int wpm;
+    private boolean started = false;
+    public static void main(String[] args)
+    {
+        new Typer();
+    }
+    
     public void keyPressed(KeyEvent e) 
     {
 
@@ -31,6 +37,11 @@ public class Typer extends JPanel implements KeyListener
 
     public void keyTyped(KeyEvent e) 
     {
+        if (!started)
+        {
+            timer.start();
+            started = true;
+        }
         if (e.getKeyChar() != e.CHAR_UNDEFINED && e.getKeyChar() != '\b' && e.getKeyChar() != '\u001b') 
         {
             input += ("" + e.getKeyChar());
@@ -69,7 +80,6 @@ public class Typer extends JPanel implements KeyListener
     public Typer()
     { 
         this("", "");
-        timer.start();
     }
 
     public Typer(String input, String target) 
@@ -102,7 +112,7 @@ public class Typer extends JPanel implements KeyListener
             int height = this.getHeight();
             g.fillRect(0,0,width,height);
             FontMetrics fm = g.getFontMetrics();
-            int fh = fm.getAscent();
+            int fh = fm.getAscent(); //font height
             int middle = height/2+fh/2;
             g.setColor(Color.black);
             g.drawString(target,0,10);
