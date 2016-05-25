@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=RandomChooser()
+comment1.params=repeat
+comment1.target=RandomChooser(boolean)
+comment2.params=num
+comment2.target=java.lang.String[]\ chooseLines(int)
+comment2.text=\r\n\ Gets\ the\ random\ number\ of\ lines\ needed\r\n\ @param\ \ num\ the\ number\ of\ lines\ wanted\r\n\ @return\ string\ of\ random\ lines\r\n
+comment3.params=str\ strAry
+comment3.target=boolean\ find(java.lang.String,\ java.lang.String[])
+comment4.params=
+comment4.target=java.util.ArrayList\ words()
+numComments=5

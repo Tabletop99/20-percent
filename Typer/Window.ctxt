@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=
+comment1.target=Window()
+comment2.params=e
+comment2.target=void\ windowClosing(java.awt.event.WindowEvent)
+comment3.params=e
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment4.params=e
+comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment5.params=str
+comment5.target=boolean\ isNumber(java.lang.String)
+comment5.text=\r\n\ checks\ if\ the\ string\ is\ an\ int\r\n\ @param\ str\ the\ possible\ number\ to\ check\r\n\ @return\ true\ if\ inputted\ string\ is\ a\ int.\r\n
+numComments=6

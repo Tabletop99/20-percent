@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=TextChooser()
+comment1.params=
+comment1.target=java.lang.String\ chooseText()
+comment2.params=num
+comment2.target=java.lang.String\ chooseText(int)
+numComments=3
